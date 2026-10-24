@@ -1,0 +1,12 @@
+<!-- Section title with a link on the right: eyebrow, heading, subtitle, link and href. -->
+<div class="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 lg:mb-10">
+  <div class="max-w-2xl">
+    <p class="flex items-center gap-2 text-xs font-bold tracking-wide text-custom-gray-600 uppercase dark:text-custom-gray-400">
+      <!-- @include partials/crest.html team="golden" class="h-4 w-4 shrink-0" -->
+      {{eyebrow}}
+    </p>
+    <h2 class="mt-4 text-4xl font-extrabold tracking-heading text-balance sm:text-5xl">{{title}}</h2>
+    <p class="mt-4 text-base/7 text-custom-gray empty:hidden dark:text-custom-gray-400">{{subtitle}}</p>
+  </div>
+  <a href="{{href}}" class="inline-flex h-11 items-center rounded-full bg-white px-5 text-sm font-bold ring-1 ring-custom-gray-200 hover:ring-custom-gray-900 dark:bg-custom-gray-800 dark:ring-custom-gray-600 dark:hover:ring-white">{{link}}</a>
+</div>

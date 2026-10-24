@@ -1,0 +1,58 @@
+<!-- Join the club: training times and a contact form on one band. Front-end only: point the form at your own service. -->
+<section id="join" class="club-container mt-24 scroll-mt-24 lg:mt-32">
+  <div class="relative isolate overflow-hidden rounded-[2rem] bg-custom-gray-900 p-6 text-white [--card:var(--color-custom-gray-900)] sm:rounded-[2.5rem] sm:p-10 lg:p-14 dark:bg-custom-gray-800 dark:[--card:var(--color-custom-gray-800)]">
+    <!-- @include partials/pitch.html id="join" class="absolute bottom-0 left-1/2 -z-30 h-[40%] w-auto -translate-x-1/2 text-white/45 lg:left-auto lg:-right-3 lg:h-full lg:translate-x-0" -->
+    <div aria-hidden="true" class="absolute inset-0 -z-20 bg-[linear-gradient(180deg,var(--card)_50%,transparent_78%)] lg:bg-[linear-gradient(90deg,var(--card)_46%,transparent_68%),linear-gradient(180deg,var(--card)_0%,transparent_45%)]"></div>
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[linear-gradient(300deg,rgb(255_255_255/0.07),transparent_45%),radial-gradient(40rem_28rem_at_10%_0%,rgb(255_186_0/0.3),transparent_70%)]"></div>
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-8">
+      <div class="lg:col-span-6">
+        <p class="flex items-center gap-2 text-xs font-bold tracking-wide text-team-golden-primary uppercase">
+          <!-- @include partials/crest.html team="golden" class="h-4 w-4 shrink-0" -->
+          Join the club
+        </p>
+        <h2 class="mt-4 text-4xl font-extrabold tracking-heading text-balance sm:text-5xl">Join Golden Team</h2>
+        <p class="mt-4 max-w-md text-base/7 text-white/70">Players of every age and level, coaches and match-day volunteers. New players can come to two sessions before signing up. Bring boots, shin pads and water.</p>
+        <h3 class="mt-10 text-xs font-bold tracking-wide text-white/60 uppercase">Training times</h3>
+        <ul class="mt-3 divide-y divide-white/10 text-sm">
+          <li class="grid grid-cols-[6rem_1fr_auto] gap-4 py-3.5"><b class="font-bold">Tuesday</b><span class="text-white/80">Under 9 and Under 12</span><span class="tabular-nums">17:30 to 18:30</span></li>
+          <li class="grid grid-cols-[6rem_1fr_auto] gap-4 py-3.5"><b class="font-bold">Wednesday</b><span class="text-white/80">Women</span><span class="tabular-nums">19:00 to 20:30</span></li>
+          <li class="grid grid-cols-[6rem_1fr_auto] gap-4 py-3.5"><b class="font-bold">Thursday</b><span class="text-white/80">First team</span><span class="tabular-nums">19:30 to 21:00</span></li>
+          <li class="grid grid-cols-[6rem_1fr_auto] gap-4 py-3.5"><b class="font-bold">Saturday</b><span class="text-white/80">Under 15 and Veterans</span><span class="tabular-nums">09:30 to 11:00</span></li>
+        </ul>
+        <p class="mt-4 text-sm text-white/60">All sessions at Golden Park. Winter times from 1 November.</p>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8">
+        <form class="rounded-3xl bg-white p-6 text-custom-gray-900 sm:p-8" action="#" method="post">
+          <p class="text-lg font-extrabold tracking-heading">Leave your details and we'll call you back</p>
+          <div class="mt-6 grid gap-4">
+            <div>
+              <label for="join-name" class="mb-1.5 block text-xs font-bold tracking-wide text-custom-gray-600 uppercase">Name</label>
+              <input id="join-name" name="name" type="text" required class="h-12 w-full rounded-2xl border border-custom-gray-200 bg-custom-gray-100 px-4 text-sm focus:border-custom-gray-900 focus:bg-white focus:outline-none" />
+            </div>
+            <div>
+              <label for="join-email" class="mb-1.5 block text-xs font-bold tracking-wide text-custom-gray-600 uppercase">Email</label>
+              <input id="join-email" name="email" type="email" required class="h-12 w-full rounded-2xl border border-custom-gray-200 bg-custom-gray-100 px-4 text-sm focus:border-custom-gray-900 focus:bg-white focus:outline-none" />
+            </div>
+            <div>
+              <label for="join-phone" class="mb-1.5 block text-xs font-bold tracking-wide text-custom-gray-600 uppercase">Phone</label>
+              <input id="join-phone" name="phone" type="tel" autocomplete="tel" class="h-12 w-full rounded-2xl border border-custom-gray-200 bg-custom-gray-100 px-4 text-sm focus:border-custom-gray-900 focus:bg-white focus:outline-none" />
+            </div>
+            <div>
+              <label for="join-team" class="mb-1.5 block text-xs font-bold tracking-wide text-custom-gray-600 uppercase">I'm interested in</label>
+              <div class="relative">
+                <select id="join-team" name="team" class="h-12 w-full appearance-none rounded-2xl border border-custom-gray-200 bg-custom-gray-100 pr-11 pl-4 text-sm focus:border-custom-gray-900 focus:bg-white focus:outline-none">
+                  <option>Playing for a youth team</option>
+                  <option>Playing for the women's team</option>
+                  <option>Playing for the first team</option>
+                  <option>Coaching or volunteering</option>
+                </select>
+                <svg viewBox="0 0 20 20" class="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 fill-custom-gray" aria-hidden="true"><path d="M5 7.5 10 12.5l5-5Z" /></svg>
+              </div>
+            </div>
+            <button type="submit" class="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-team-golden-primary px-6 text-sm font-bold text-custom-gray-900 hover:bg-custom-yellow">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

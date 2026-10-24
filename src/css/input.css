@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+/* Dark mode follows the .dark class on <html>, set by the theme toggle in assets/js/main.js. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Typography */
+  --font-sans: InterVariable, Inter, ui-sans-serif, system-ui, sans-serif;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.125rem;
+  --text-2xs--letter-spacing: 0.005em;
+
+  --text-xs--line-height: 1.25rem;
+
+  --text-xs-md: 0.8125rem;
+  --text-xs-md--line-height: 1.5rem;
+  --text-xs-md--letter-spacing: -0.0025em;
+
+  --text-sm--line-height: 1.5rem;
+  --text-sm--letter-spacing: -0.006em;
+
+  --text-base--line-height: 2rem;
+  --text-base--letter-spacing: -0.011em;
+
+  --text-2xl--line-height: 2rem;
+
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.25rem;
+
+  /* Headings: a little tighter than the body text */
+  --tracking-heading: -0.0125em;
+
+  /* SportyBlocks colors */
+  --color-custom-gray-100: #f9f9f9;
+  --color-custom-gray-150: #f2f2f2;
+  --color-custom-gray-200: #e1e1e1;
+  --color-custom-gray-400: #97a2c6;
+  --color-custom-gray: #7b8294;
+  --color-custom-gray-600: #3a4662;
+  --color-custom-gray-700: #252e44;
+  --color-custom-gray-800: #1f2638;
+  --color-custom-gray-900: #252831;
+
+  --color-custom-green-200: #6ffffd;
+  --color-custom-green-300: #28ffdb;
+  --color-custom-green-350: #00e2bc;
+  --color-custom-green: #00d4cf;
+  --color-custom-green-500: #04c3a3;
+
+  --color-custom-yellow-300: #fff400;
+  --color-custom-yellow: #ffcc00;
+  --color-custom-orange: #ff5411;
+  --color-custom-red: #ff2c4f;
+  --color-custom-blue: #2380ff;
+
+  --color-team-golden-primary: #ffba00;
+  --color-team-golden-secondary: #ff9000;
+  --color-team-emerald-primary: #00d3af;
+  --color-team-emerald-secondary: #00b394;
+  --color-team-crimson-primary: #ff2b4f;
+  --color-team-crimson-secondary: #c70021;
+  --color-team-blue-400: #0085ff;
+  --color-team-blue-500: #005bc6;
+  --color-team-blue-primary: #285bff;
+  --color-team-blue-secondary: #0330c1;
+  --color-team-purple-300: #ff0cf5;
+  --color-team-purple-400: #e547ff;
+  --color-team-purple-primary: #9147ff;
+  --color-team-purple-secondary: #9147ff;
+  --color-team-green-primary: #95ec0b;
+  --color-team-green-secondary: #67a504;
+  --color-team-aqua-300: #b4f9ff;
+  --color-team-aqua-400: #00f0ff;
+  --color-team-aqua-primary: #00c6ff;
+  --color-team-aqua-secondary: #007ea1;
+  --color-team-silver-primary: #b0b7c1;
+  --color-team-silver-secondary: #5f656f;
+
+  /* Template: page background in dark mode, one step below the component cards */
+  --color-club-night: #151a28;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Anchored sections stop below the sticky header */
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    @apply bg-custom-gray-150 text-custom-gray-900 antialiased dark:bg-club-night dark:text-white;
+  }
+}
+
+/* The content column. Section backgrounds may run full width; their content always sits in this. */
+@utility club-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 87.5rem;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+}

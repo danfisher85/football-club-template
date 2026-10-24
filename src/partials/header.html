@@ -1,0 +1,41 @@
+<!-- Header. The links scroll to the sections of the page; point the Tickets button at your ticket shop. -->
+<header class="sticky top-0 z-40 bg-custom-gray-150/85 backdrop-blur-md dark:bg-club-night/85">
+  <div class="club-container flex h-20 items-center gap-4">
+    <a href="#top" class="flex shrink-0 items-center gap-3">
+      <!-- @include partials/crest.html team="golden" class="h-11 w-11" -->
+      <span class="flex flex-col gap-0.5">
+        <span class="text-base/none font-extrabold tracking-heading">Golden Team</span>
+        <span class="text-xs/none text-custom-gray dark:text-custom-gray-400">Football club since 1987</span>
+      </span>
+    </a>
+    <nav aria-label="Main" class="ml-6 hidden items-center gap-1 lg:flex">
+      <a href="#results" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">Results</a>
+      <a href="#fixtures" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">Fixtures</a>
+      <a href="#table" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">Table</a>
+      <a href="#squad" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">Squad</a>
+      <a href="#news" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">News</a>
+      <a href="#join" class="rounded-full px-3.5 py-2 text-sm font-semibold text-custom-gray-600 hover:bg-white hover:text-custom-gray-900 dark:text-custom-gray-400 dark:hover:bg-custom-gray-800 dark:hover:text-white">Join</a>
+    </nav>
+    <div class="ml-auto flex items-center gap-2">
+      <button type="button" data-theme-toggle aria-label="Switch between light and dark mode" class="grid h-11 w-11 place-items-center rounded-full bg-white ring-1 ring-custom-gray-200 dark:bg-custom-gray-800 dark:ring-custom-gray-600">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5 dark:hidden" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="hidden h-5 w-5 dark:block" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path stroke-linecap="round" d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+      </button>
+      <a href="#next-match" class="hidden h-11 items-center rounded-full bg-custom-gray-900 px-5 text-sm font-bold text-white hover:bg-custom-gray-800 sm:inline-flex dark:bg-white dark:text-custom-gray-900 dark:hover:bg-custom-gray-100">Tickets</a>
+      <button type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open the menu" class="grid h-11 w-11 place-items-center rounded-full bg-white ring-1 ring-custom-gray-200 lg:hidden dark:bg-custom-gray-800 dark:ring-custom-gray-600">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-5 w-5" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16" /></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" aria-label="Main" hidden class="club-container pb-4 lg:hidden">
+    <div class="flex flex-col rounded-3xl bg-white p-2 ring-1 ring-custom-gray-200 dark:bg-custom-gray-800 dark:ring-custom-gray-600">
+      <a href="#results" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">Results</a>
+      <a href="#fixtures" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">Fixtures</a>
+      <a href="#table" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">Table</a>
+      <a href="#squad" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">Squad</a>
+      <a href="#news" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">News</a>
+      <a href="#join" class="rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-custom-gray-100 dark:hover:bg-custom-gray-700">Join</a>
+      <a href="#next-match" class="m-2 inline-flex h-11 items-center justify-center rounded-full bg-custom-gray-900 text-sm font-bold text-white sm:hidden dark:bg-white dark:text-custom-gray-900">Tickets</a>
+    </div>
+  </nav>
+</header>

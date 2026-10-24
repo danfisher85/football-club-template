@@ -1,0 +1,67 @@
+<!-- Footer: the band runs the full width with a small inset, the content stays in the club-container column. -->
+<footer class="mt-24 px-6 pb-6 sm:px-9 sm:pb-9 lg:mt-32">
+  <div class="rounded-[2rem] bg-custom-gray-900 text-white [--wordmark-bottom:#2a2c35] [--wordmark-top:#55575e] sm:rounded-[2.5rem] dark:bg-custom-gray-800 dark:[--wordmark-bottom:#232a3c] dark:[--wordmark-top:#505664]">
+    <div class="club-container grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-12 lg:py-16">
+      <div class="flex flex-col gap-5 lg:col-span-4">
+        <a href="#top" class="flex items-center gap-3">
+          <!-- @include partials/crest.html team="golden" class="h-12 w-12" -->
+          <span class="text-xl font-extrabold tracking-heading">Golden Team</span>
+        </a>
+        <p class="max-w-xs text-sm text-white/60">Community football club since 1987. First team in the Blocks League, plus youth, women's and veterans' teams.</p>
+        <p class="text-sm text-white/60">Golden Ground, 1 Stadium Way, Golden Town</p>
+      </div>
+      <div class="lg:col-span-2">
+        <h2 class="mb-4 text-sm font-bold">Club</h2>
+        <ul class="flex flex-col gap-2.5 text-sm text-white/60">
+          <li><a href="#news" class="hover:text-white">News</a></li>
+          <li><a href="#join" class="hover:text-white">Training times</a></li>
+          <li><a href="#join" class="hover:text-white">Join the club</a></li>
+          <li><a href="#sponsors" class="hover:text-white">Partners</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h2 class="mb-4 text-sm font-bold">Matches</h2>
+        <ul class="flex flex-col gap-2.5 text-sm text-white/60">
+          <li><a href="#results" class="hover:text-white">Results</a></li>
+          <li><a href="#fixtures" class="hover:text-white">Fixtures</a></li>
+          <li><a href="#table" class="hover:text-white">League table</a></li>
+          <li><a href="#squad" class="hover:text-white">Squad</a></li>
+        </ul>
+      </div>
+      <div class="sm:col-span-2 lg:col-span-4">
+        <h2 class="mb-2 text-sm font-bold">Club newsletter</h2>
+        <p class="mb-5 text-sm text-white/60">Team news and match tickets, once a week.</p>
+        <!-- Front-end only: point the form at your newsletter service. -->
+        <form class="flex gap-2 rounded-full bg-white/10 p-1.5 ring-1 ring-white/15" action="#" method="post">
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input id="footer-email" type="email" required placeholder="Your email" class="min-w-0 flex-1 bg-transparent px-4 text-sm placeholder:text-white/50 focus:outline-none" />
+          <button type="submit" class="h-10 rounded-full bg-team-golden-primary px-5 text-sm font-bold text-custom-gray-900 hover:bg-custom-yellow">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <!-- Wordmark: an SVG so the text always spans the content column; textLength keeps it exact whatever font loads.
+         The fill is an opaque gradient from --wordmark-top to --wordmark-bottom (set on the band for each mode), so the
+         glyphs that overlap at this tracking show no seams. -->
+    <div aria-hidden="true" class="club-container pt-4">
+      <svg viewBox="0 0 571.4 76" class="block h-auto w-full">
+        <defs>
+          <linearGradient id="wordmark-fade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" style="stop-color: var(--wordmark-top)" />
+            <stop offset="1" style="stop-color: var(--wordmark-bottom)" />
+          </linearGradient>
+        </defs>
+        <text x="0" y="75" font-size="100" font-weight="900" textLength="571.4" lengthAdjust="spacing" fill="url(#wordmark-fade)" class="font-sans tracking-[-0.05em]">Golden Team</text>
+      </svg>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="club-container flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/60 sm:flex-row">
+        <p>&copy; <span data-year>2026</span> Golden Team. A fictional club.</p>
+        <p>Built with <a href="https://sportyblocks.com/?utm_source=football-club-template&amp;utm_medium=footer-credit" class="font-bold text-white hover:text-team-golden-primary">SportyBlocks</a> components for Tailwind CSS</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- @include partials/svg-filters.html -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

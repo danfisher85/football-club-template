@@ -1,0 +1,14 @@
+{
+  "name": "football-club-template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free football club website template built with SportyBlocks components and Tailwind CSS 4.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node build.mjs && tailwindcss -i src/css/input.css -o dist/assets/css/style.css --minify",
+    "dev": "node build.mjs --watch & tailwindcss -i src/css/input.css -o dist/assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3"
+  }
+}
