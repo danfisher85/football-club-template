@@ -18,9 +18,10 @@ A free one-page football club website built with [SportyBlocks](https://sportybl
 
 Light and dark mode are both included, with a toggle in the header.
 
-## Use it as it is
+## Get it
 
-Open `dist/index.html` in a browser. Everything in `dist/` is plain HTML with a prebuilt stylesheet, so you can upload the folder to any web host.
+- **Ready to upload:** download the zip from [sportyblocks.com/free/football-club-website-template](https://sportyblocks.com/free/football-club-website-template). It includes a built `dist/` folder: open `index.html` in a browser, or upload the folder to any web host. No tools needed.
+- **From this repository:** clone it and run the build below. `dist/` is not committed; the build creates it.
 
 ## Edit it
 
