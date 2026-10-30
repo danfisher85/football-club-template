@@ -1,17 +1,17 @@
 <!-- One row of Match Schedule v1. Pass day, weekday, home, home-abbr, home-team (crest colour), the same
      three for away, then venue, competition, channel and time on the include. -->
-<div class="@container rounded-3xl border border-custom-gray-200 bg-white text-gray-800 dark:border-custom-gray-600 dark:bg-custom-gray-800 dark:text-white">
+<div data-reveal="scroll" class="@container rounded-3xl border border-custom-gray-200 bg-white text-gray-800 dark:border-custom-gray-600 dark:bg-custom-gray-800 dark:text-white">
   <div class="flex">
-    <div class="flex w-16 flex-col items-center justify-center py-7 @2xl:w-20">
+    <div class="flex w-16 shrink-0 flex-col items-center justify-center py-7 @2xl:w-20">
       <div class="text-xl/none font-bold @2xl:text-2xl/none">{{day}}</div>
       <div class="text-xs-md/none">{{weekday}}</div>
     </div>
-    <div class="flex flex-1 flex-col items-center gap-x-5 gap-y-5 rounded-3xl px-5 py-8 ring-1 ring-custom-gray-200 @2xl:flex-row dark:ring-custom-gray-600">
+    <div class="flex min-w-0 flex-1 flex-col items-center gap-x-5 gap-y-5 rounded-3xl px-5 py-8 ring-1 ring-custom-gray-200 @2xl:flex-row dark:ring-custom-gray-600">
       <div class="flex items-center whitespace-nowrap">
         <div class="group flex items-center">
           <div class="flex items-center gap-1.5 group-first:flex-row-reverse group-first:text-end">
             <!-- @include partials/crest.html team="{{home-team}}" class="h-8 w-8 shrink-0" -->
-            <div class="text-sm/tight font-bold @md:w-14 @lg:w-28 @3xl:w-32 @4xl:w-28 @5xl:w-40">
+            <div class="text-sm/tight font-bold @md:w-14 @lg:w-28 @2xl:w-10 @3xl:w-32 @4xl:w-28 @5xl:w-40">
               <div class="hidden truncate @lg:block @2xl:hidden @3xl:block">{{home}}</div>
               <div class="@lg:hidden @2xl:block @3xl:hidden">{{home-abbr}}</div>
             </div>
@@ -21,7 +21,7 @@
         <div class="group flex items-center">
           <div class="flex items-center gap-1.5 group-first:flex-row-reverse group-first:text-end">
             <!-- @include partials/crest.html team="{{away-team}}" class="h-8 w-8 shrink-0" -->
-            <div class="text-sm/tight font-bold @md:w-14 @lg:w-28 @3xl:w-32 @4xl:w-28 @5xl:w-40">
+            <div class="text-sm/tight font-bold @md:w-14 @lg:w-28 @2xl:w-10 @3xl:w-32 @4xl:w-28 @5xl:w-40">
               <div class="hidden truncate @lg:block @2xl:hidden @3xl:block">{{away}}</div>
               <div class="@lg:hidden @2xl:block @3xl:hidden">{{away-abbr}}</div>
             </div>
@@ -29,13 +29,13 @@
           <div class="hidden w-10 text-center text-sm/tight font-bold uppercase group-first:block @2xl:w-12 @3xl:w-14">vs</div>
         </div>
       </div>
-      <div class="flex flex-1 flex-col gap-x-5 gap-y-5 @4xl:flex-row">
-        <div class="text-center @2xl:w-44 @2xl:text-start">
-          <div class="text-sm/tight font-bold">{{venue}}</div>
+      <div class="flex w-full min-w-0 flex-1 flex-col gap-x-5 gap-y-5 @2xl:w-auto @min-[58rem]:flex-row">
+        <div class="min-w-0 text-center @2xl:text-start @min-[58rem]:flex-1">
+          <div class="truncate text-sm/tight font-bold">{{venue}}</div>
           <div class="text-xs-md/tight">{{competition}}</div>
         </div>
-        <div class="text-center @2xl:w-36 @2xl:text-start">
-          <div class="text-sm/tight font-bold">{{channel}}</div>
+        <div class="min-w-0 text-center @2xl:text-start @min-[58rem]:flex-1">
+          <div class="truncate text-sm/tight font-bold">{{channel}}</div>
           <div class="text-xs-md/tight">Watch on</div>
         </div>
         <div class="text-center @2xl:text-start">

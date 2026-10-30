@@ -3,11 +3,11 @@
      class for size, position and the line colour (currentColor). -->
 <svg viewBox="0 0 68 52.5" overflow="visible" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="{{class}} [&_*]:[vector-effect:non-scaling-stroke]">
   <defs>
-    <filter id="turf-{{id}}" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="2.4" numOctaves="3" seed="7" stitchTiles="stitch" />
-      <feColorMatrix type="saturate" values="0" />
-      <feComponentTransfer><feFuncA type="linear" slope="0.6" intercept="-0.1" /></feComponentTransfer>
-    </filter>
+    <!-- The grass texture is a pre-rendered noise tile (img/turf.webp). A live SVG turbulence filter looks the same
+         but is slow to draw, and every animation over it made the browser redraw it and drop frames. -->
+    <pattern id="turf-{{id}}" patternUnits="userSpaceOnUse" width="20" height="20">
+      <image href="assets/img/turf.webp" width="20" height="20" />
+    </pattern>
   </defs>
   <g>
     <g stroke="none">
@@ -19,7 +19,7 @@
       <rect x="-30" y="22.5" width="128" height="7.5" fill="rgb(255 255 255 / 0.03)" />
       <rect x="-30" y="37.5" width="128" height="7.5" fill="rgb(255 255 255 / 0.03)" />
       <rect x="-30" y="52.5" width="128" height="7.5" fill="rgb(255 255 255 / 0.03)" />
-      <rect x="-30" y="-30" width="128" height="100" fill="white" filter="url(#turf-{{id}})" opacity="0.18" />
+      <rect x="-30" y="-30" width="128" height="100" fill="url(#turf-{{id}})" opacity="0.18" />
     </g>
     <rect x="0.5" y="0" width="67" height="52.5" />
     <path d="M24.85 0A9.15 9.15 0 0 0 43.15 0" />

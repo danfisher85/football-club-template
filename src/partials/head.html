@@ -11,6 +11,16 @@
         var theme = localStorage.getItem('theme');
         if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
       } catch (e) {}
+      // Arm the blur-in reveal (js/main.js) unless the visitor prefers reduced motion. If main.js has
+      // not started it within 3 seconds, show everything.
+      try {
+        if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.setAttribute('data-reveal', 'armed');
+          setTimeout(function () {
+            if (!window.clubRevealStarted) document.documentElement.setAttribute('data-reveal', 'off');
+          }, 3000);
+        }
+      } catch (e) {}
     </script>
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

@@ -102,3 +102,82 @@
     padding-inline: 1.5rem;
   }
 }
+
+/* Blur-in reveal. data-reveal="load" plays when the page renders (the hero); data-reveal="scroll"
+   waits until the element scrolls into view, where js/main.js marks it data-shown. Elements only
+   hide once the script in partials/head.html has armed the reveal, so without JavaScript, or for
+   visitors who prefer reduced motion, everything simply shows. Headings with data-split come in
+   word by word (main.js wraps each word), and data-reveal-group staggers its children. To keep an
+   element still, remove its data-reveal attribute. */
+:root {
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(16px);
+  }
+}
+
+@keyframes reveal-word-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(0.25em);
+  }
+}
+
+[data-reveal] {
+  --reveal-wait: calc(var(--reveal-i, 0) * 90ms + var(--reveal-delay, 0ms));
+}
+
+[data-split] .reveal-word {
+  display: inline-block;
+}
+
+/* A heading waits, hidden, until main.js has split it into words. */
+:root[data-reveal='armed'] [data-split]:not([data-split-ready]) {
+  opacity: 0;
+}
+
+[data-reveal='load']:not([data-split]) {
+  animation: reveal-in 0.9s var(--ease-reveal) var(--reveal-wait) both;
+}
+
+[data-reveal='load'][data-split] .reveal-word {
+  animation: reveal-word-in 0.8s var(--ease-reveal) calc(var(--reveal-wait) + var(--w, 0) * 45ms) both;
+}
+
+:root[data-reveal='armed'] [data-reveal='scroll']:not([data-split]),
+:root[data-reveal='armed'] [data-reveal='scroll'][data-split] .reveal-word {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s ease,
+    filter 0.9s var(--ease-reveal),
+    transform 0.9s var(--ease-reveal);
+  transition-delay: var(--reveal-wait);
+}
+
+:root[data-reveal='armed'] [data-reveal='scroll'][data-split] .reveal-word {
+  filter: blur(10px);
+  transform: translateY(0.25em);
+  transition-delay: calc(var(--reveal-wait) + var(--w, 0) * 45ms);
+}
+
+:root[data-reveal='armed'] [data-reveal='scroll'][data-shown]:not([data-split]),
+:root[data-reveal='armed'] [data-reveal='scroll'][data-shown] .reveal-word {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal='load']:not([data-split]),
+  [data-reveal='load'] .reveal-word {
+    animation: none;
+  }
+}

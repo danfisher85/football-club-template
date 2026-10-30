@@ -16,7 +16,7 @@ A free one-page football club website built with [SportyBlocks](https://sportybl
 | Join the club, with training times and a form | Template block |
 | Partners and footer | Template blocks |
 
-Light and dark mode are both included, with a toggle in the header.
+Light and dark mode are both included, with a toggle in the header. Headings, cards and sections blur in as they scroll into view.
 
 ## Get it
 
@@ -42,7 +42,7 @@ src/
   partials/     head, header, footer, section titles, team crest, photo placeholder,
                 the result card and the fixture row
   css/input.css Tailwind entry point and the SportyBlocks theme
-  js/main.js    mobile menu, theme toggle, squad filter
+  js/main.js    mobile menu, theme toggle, squad filter, blur-in reveal
   img/          player photos
 ```
 
@@ -53,6 +53,7 @@ A page pulls in a piece with `<!-- @include partials/header.html -->`. Values pa
 - **Club name, crest and colours:** `partials/header.html`, `partials/footer.html` and `partials/crest.html` (one crest, coloured per team with `team="golden"`). The theme colours are in `css/input.css`; the club colour is `team-golden-primary`.
 - **Content width:** every section sits in the `club-container` column (1400px). Change it in `css/input.css`.
 - **Next match and tickets:** `blocks/hero.html`. Point the Buy tickets button and the Tickets button in the header at your ticket shop.
+- **Animation:** anything with a `data-reveal` attribute blurs in (styles at the end of `css/input.css`, script in `js/main.js`). Remove the attribute to keep an element still. Visitors who prefer reduced motion see no animation, and without JavaScript everything simply shows.
 - **Forms:** the newsletter and join forms are front-end only. Point their `action` at your own service.
 - **Images:** the player photos, the news photos and the partner logos are AI-generated stand-ins (fictional people, fictional companies), free to use but meant to be replaced with your own. They live in `img/players`, `img/news` and `img/partners`.
 
